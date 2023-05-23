@@ -4,44 +4,41 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context=".ClientActivity">
+    tools:context=".PosControleActivity">
 
-    <TextView
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tela da Operadora"
-        android:textSize="30sp"
-        android:textStyle="bold"
+        android:src="@drawable/ic_logo"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btnOK"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_hello"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Retorno OK"
-        android:layout_margin="30dp"
-        android:backgroundTint="@color/green"
-        android:textColorHint="@color/white"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="Pos controle solicita para o cliente o pagamento,\n esperando o retorndo \nOK ou Nok"
+        app:layout_constraintBottom_toTopOf="@id/bt_nav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
-        android:id="@+id/btnNOK"
+        android:id="@+id/bt_nav"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Retorno Não OK"
-        android:layout_margin="30dp"
-        android:backgroundTint="@color/red"
+        android:padding="16dp"
+        android:backgroundTint="@color/black"
         android:textColorHint="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOK" />
+        android:layout_margin="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:hint="Solicitar Pagamento "/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

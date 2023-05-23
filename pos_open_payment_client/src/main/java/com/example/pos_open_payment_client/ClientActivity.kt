@@ -9,22 +9,28 @@ import android.widget.EditText
 
 class ClientActivity : AppCompatActivity() {
 
-    private lateinit var edt_message : EditText
-    private lateinit var btn_send: Button
+    private lateinit var btnNOK: Button
+    private lateinit var btnOK: Button
+
 
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        edt_message = findViewById(R.id.edt_result)
-        btn_send = findViewById(R.id.bt_send)
+        btnNOK = findViewById(R.id.btnNOK)
+        btnOK = findViewById(R.id.btnOK)
 
-        btn_send.setOnClickListener {
+        btnOK.setOnClickListener {
             val intent = Intent()
-            intent.putExtra("result", edt_message.text.toString())
-            setResult(78, intent)
-
+            intent.putExtra("result", "Compra finalizada com sucesso!")
+            setResult(200, intent)
+            super.onBackPressed()
+        }
+        btnNOK.setOnClickListener {
+            val intent = Intent()
+            intent.putExtra("result", "Compra Recusada, refaça a operação !")
+            setResult(400, intent)
             super.onBackPressed()
         }
     }
